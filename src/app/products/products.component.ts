@@ -7,9 +7,9 @@ import { CatalogueService } from '../catalogue.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  public products: any; // Modifier la visibilité de 'products'
+  public products: any;
 
-  constructor(private catService: CatalogueService) { }
+  constructor(public catService: CatalogueService) { }
 
   ngOnInit(): void {
     this.getProducts();
