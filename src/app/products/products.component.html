@@ -1,18 +1,17 @@
 <div *ngIf="products">
-  <div *ngFor="let p of products._embedded.products">
-  <div class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">{{p.name}}</div>
-      <div class="panel-body">
-        <table>
-          <tr>
-            <td>
-              <img height="180" src="{{this.catService.host+'/photoProduct/'+p.id}}"/>
-            </td>
-          </tr>
-        </table>
+  <div class="row">
+    <div *ngFor="let p of products._embedded.products" class="col-md-4">
+      <div class="card mb-6">
+        <img class="card-img-top" height="180" src="{{ catService.host + '/photoProduct/' + p.id }}" alt="{{ p.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ p.name }}</h5>
+          <p class="card-text">{{ p.description }}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="text-muted">{{ p.cuurentPrice }}</span>
+            <!-- Ajoutez ici un bouton pour ajouter au panier ou toute autre action -->
+          </div>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 </div>
